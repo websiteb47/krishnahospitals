@@ -3,10 +3,10 @@ import ContactForm from "@/components/ContactForm";
 import HeroBanner from "@/components/HeroBanner";
 
 const hospitalServices = [
-  { icon: "🏥", label: "24/7 Emergency Care" },
-  { icon: "💊", label: "₹200 OP Consultation Fee" },
-  { icon: "📹", label: "Video Call Consultations" },
-  { icon: "🏠", label: "Home Visit Services" },
+  { icon: "", label: "24/7 Emergency Care" },
+  { icon: "", label: "₹200 OP Consultation Fee" },
+  { icon: "", label: "Video Call Consultations" },
+  { icon: "", label: "Home Visit Services" },
 ];
 
 const features = [
@@ -178,8 +178,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── EXPERT CARE ───────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      {/* ── EXPERT CARE (hidden) ───────────────────────────────────────── */}
+      {/* <section className="max-w-7xl mx-auto px-6 py-16">
         <h2 className="text-center font-extrabold text-gray-800 text-2xl mb-10 section-title-bar">
           Expert Care, Anytime You Need
         </h2>
@@ -209,7 +209,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── SPECIALTIES & FEATURES ───────────────────────────── */}
       <section className="bg-[#f4f8fd] py-16 px-6">
