@@ -7,7 +7,7 @@ const slides = [
   {
     id: 1,
     type: "image",
-    src: "/Banner1.png",
+    src: "/banner1.png",
     alt: "Krishna Hospitals & Labs – Caring for Your Health 24/7",
   },
   {
