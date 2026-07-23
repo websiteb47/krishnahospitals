@@ -60,7 +60,7 @@ export default function Footer() {
             {[
               "24/7 Emergency Care",
               "OP Consultation – ₹200",
-              "Video / Telemedicine",
+              "Video / Home Visits",
               "Home Doctor Visit",
               "All Lab Tests",
               "Free Home Sample Collection",

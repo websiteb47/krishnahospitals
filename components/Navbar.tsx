@@ -12,7 +12,6 @@ const navLinks = [
       { label: "Emergency & OP", href: "/hospital#emergency" },
       { label: "Specialties", href: "/hospital#specialties" },
       { label: "Our Doctors", href: "/doctors" },
-      { label: "Telemedicine", href: "/hospital#telemedicine" },
       { label: "Gallery", href: "/gallery" },
     ],
   },
@@ -40,7 +39,6 @@ const navLinks = [
     dropdown: [
       { label: "Emergency & OP", href: "/hospital#emergency" },
       { label: "Specialties", href: "/hospital#specialties" },
-      { label: "Telemedicine", href: "/hospital#telemedicine" },
     ],
   },
   { label: "Our Doctors", href: "/doctors" },

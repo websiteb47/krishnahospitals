@@ -1,13 +1,12 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const slides = [
   {
     id: 1,
     type: "image",
-    src: "/banner1.png",
+    src: "/newbanner.png",
     alt: "Krishna Hospitals & Labs – Caring for Your Health 24/7",
   },
   {
@@ -203,13 +202,12 @@ export default function HeroBanner() {
           aria-hidden={idx !== current}
         >
           {slide.type === "image" ? (
-            <Image
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src={slide.src!}
               alt={slide.alt!}
-              fill
-              className="object-cover object-top"
-              priority={idx === 0}
-              sizes="100vw"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: "center 47%" }}
             />
           ) : (
             /* Custom illustrated slide */

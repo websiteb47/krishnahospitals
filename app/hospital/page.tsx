@@ -167,63 +167,6 @@ export default function HospitalPage() {
         </div>
       </section>
 
-      {/* Telemedicine */}
-      <section id="telemedicine" className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <span className="text-[#1565c0] font-bold text-sm uppercase tracking-widest">Telemedicine</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d2d5e] mt-3 mb-5">
-              Consult Doctors From Home
-            </h2>
-            <p className="text-gray-500 leading-relaxed mb-6">
-              Can't make it to the hospital? Our telemedicine service lets you connect with specialist doctors via secure video call — from the comfort of your home.
-            </p>
-            <div className="space-y-4">
-              {[
-                { icon: "📹", title: "Video Call OP", desc: "Face-to-face consultation with a doctor via HD video call." },
-                { icon: "🏠", title: "Home Visits", desc: "Medical staff visit you at home for bedside treatment and care." },
-                { icon: "💬", title: "WhatsApp Consultation", desc: "Quick health queries answered by our medical team on WhatsApp." },
-              ].map((t) => (
-                <div key={t.title} className="flex gap-4 p-4 bg-[#f4f8fd] rounded-xl">
-                  <span className="text-2xl">{t.icon}</span>
-                  <div>
-                    <p className="font-bold text-[#0d2d5e] text-sm">{t.title}</p>
-                    <p className="text-gray-500 text-sm mt-0.5">{t.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex gap-4 mt-8">
-              <a href="#appointment" className="bg-[#1565c0] text-white font-bold px-6 py-3 rounded-full hover:bg-[#0d2d5e] transition-colors text-sm">
-                📅 Book Video Consult
-              </a>
-              <a href="https://wa.me/919999999999" className="bg-green-500 text-white font-bold px-6 py-3 rounded-full hover:bg-green-600 transition-colors text-sm">
-                💬 WhatsApp Us
-              </a>
-            </div>
-          </div>
-          <div className="bg-gradient-to-br from-[#1a56db] to-[#1e3a5f] rounded-3xl p-10 text-white text-center shadow-2xl">
-            <div className="text-7xl mb-5">📹</div>
-            <h3 className="text-2xl font-extrabold mb-3">Video Consultation</h3>
-            <p className="text-blue-200 mb-6">Connect with our doctors from anywhere, anytime.</p>
-            <div className="grid grid-cols-2 gap-4 text-left">
-              {[
-                "No travel required",
-                "Specialist doctors",
-                "Prescription provided",
-                "Follow-up support",
-                "Secure & private",
-                "Available 24/7",
-              ].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-blue-100">
-                  <span className="text-green-400 font-bold">✓</span> {f}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery */}
       <section id="gallery" className="bg-[#f4f8fd] py-20 px-6">
         <div className="max-w-7xl mx-auto">
