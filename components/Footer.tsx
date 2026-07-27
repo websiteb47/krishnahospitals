@@ -113,7 +113,13 @@ export default function Footer() {
             <span>|</span>
             <span>📧 <a href="mailto:info@krishnahospitals.in" className="hover:text-white">info@krishnahospitals.in</a></span>
           </div>
-          <p>© {new Date().getFullYear()} Krishna Hospitals &amp; Labs, Guntur. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span>|</span>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
+            <span>|</span>
+            <p>© {new Date().getFullYear()} Krishna Hospitals &amp; Labs, Guntur.</p>
+          </div>
         </div>
       </div>
     </footer>
