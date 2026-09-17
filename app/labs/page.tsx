@@ -1,9 +1,8 @@
 import ContactForm from "@/components/ContactForm";
 
-// Tests from the actual Krishna Labs board (Telugu board translated)
 const testCategories = [
   {
-    icon: "🫀",
+    imgSrc: "/lab_tests.png",
     title: "Organ Function Tests",
     tests: [
       "Liver Function Test (LFT)",
@@ -13,7 +12,7 @@ const testCategories = [
     ],
   },
   {
-    icon: "🩸",
+    imgSrc: "/lab_tests.png",
     title: "Blood & Sugar Tests",
     tests: [
       "Sugar Test (Blood Glucose)",
@@ -25,7 +24,7 @@ const testCategories = [
     ],
   },
   {
-    icon: "🦠",
+    imgSrc: "/lab_tests.png",
     title: "Infection & Disease Tests",
     tests: [
       "Dengue Test",
@@ -37,7 +36,7 @@ const testCategories = [
     ],
   },
   {
-    icon: "💉",
+    imgSrc: "/lab_tests.png",
     title: "Hormone & Specialty Tests",
     tests: [
       "Thyroid Test",
@@ -48,7 +47,7 @@ const testCategories = [
     ],
   },
   {
-    icon: "📡",
+    imgSrc: "/service_lab.png",
     title: "Imaging & Radiology",
     tests: [
       "X-Ray (Digital)",
@@ -59,7 +58,7 @@ const testCategories = [
     ],
   },
   {
-    icon: "🧪",
+    imgSrc: "/lab_tests.png",
     title: "Health Packages",
     tests: [
       "Full Body Checkup",
@@ -73,10 +72,10 @@ const testCategories = [
 ];
 
 const steps = [
-  { icon: "📞", step: "1", title: "Call or Book Online", desc: "Call us or fill the booking form to schedule your sample collection." },
-  { icon: "🏠", step: "2", title: "We Come to You", desc: "Our trained phlebotomist arrives at your location at the scheduled time." },
-  { icon: "🧪", step: "3", title: "Sample Collected", desc: "Blood/urine/other samples collected safely and hygienically." },
-  { icon: "📋", step: "4", title: "Get Reports", desc: "Receive your digital reports via WhatsApp/email, same day for most tests." },
+  { imgSrc: "/lab_tests.png", step: "1", title: "Call or Book Online", desc: "Call us or fill the booking form to schedule your sample collection." },
+  { imgSrc: "/service_home_visit.png", step: "2", title: "We Come to You", desc: "Our trained phlebotomist arrives at your location at the scheduled time." },
+  { imgSrc: "/lab_tests.png", step: "3", title: "Sample Collected", desc: "Blood/urine/other samples collected safely and hygienically." },
+  { imgSrc: "/lab_tests.png", step: "4", title: "Get Reports", desc: "Receive your digital reports via WhatsApp/email, same day for most tests." },
 ];
 
 export default function LabsPage() {
@@ -97,22 +96,24 @@ export default function LabsPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="#booking" className="bg-white text-[#1e3a5f] font-bold px-7 py-3.5 rounded-full hover:shadow-xl transition-all hover:scale-105 text-sm">
-                🧪 Book a Test
+                Book a Test
               </a>
               <a href="#home-collection" className="border-2 border-white text-white font-bold px-7 py-3.5 rounded-full hover:bg-white hover:text-[#1e3a5f] transition-all text-sm">
-                🏠 Home Collection
+                Home Collection
               </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: "🩸", val: "500+", label: "Tests Available" },
-              { icon: "🏠", val: "FREE", label: "Home Collection" },
-              { icon: "⚡", val: "Same Day", label: "Reports" },
-              { icon: "💰", val: "Discounted", label: "Pricing" },
+              { imgSrc: "/lab_tests.png", val: "500+", label: "Tests Available" },
+              { imgSrc: "/service_home_visit.png", val: "FREE", label: "Home Collection" },
+              { imgSrc: "/service_lab.png", val: "Same Day", label: "Reports" },
+              { imgSrc: "/lab_tests.png", val: "Discounted", label: "Pricing" },
             ].map((s) => (
-              <div key={s.label} className="bg-white/15 backdrop-blur border border-white/20 rounded-2xl p-6 text-center">
-                <div className="text-3xl mb-2">{s.icon}</div>
+              <div key={s.label} className="bg-white/15 backdrop-blur border border-white/20 rounded-2xl p-6 text-center flex flex-col items-center">
+                <div className="w-12 h-12 mb-3 rounded-full overflow-hidden border-2 border-white/40">
+                  <img src={s.imgSrc} alt={s.label} className="w-full h-full object-cover" />
+                </div>
                 <p className="text-xl font-extrabold text-yellow-300">{s.val}</p>
                 <p className="text-blue-100 text-sm font-semibold mt-1">{s.label}</p>
               </div>
@@ -129,7 +130,9 @@ export default function LabsPage() {
       {/* Home Collection Highlight */}
       <section id="home-collection" className="bg-gradient-to-r from-purple-700 to-purple-900 py-14 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
-          <div className="text-5xl mb-4">🏠</div>
+          <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <img src="/service_home_visit.png" alt="Home Collection" className="w-full h-full object-cover" />
+          </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">Free Bedside & Home Sample Collection</h2>
           <p className="text-purple-200 text-lg mb-6 max-w-2xl mx-auto">
             Can't visit the lab? No problem. Our trained team comes to your home or bedside to collect samples — completely free of charge, available full-time.
@@ -139,7 +142,7 @@ export default function LabsPage() {
               Schedule Home Collection →
             </a>
             <a href="tel:+919999999999" className="border-2 border-white text-white font-bold px-8 py-3.5 rounded-full hover:bg-white hover:text-purple-700 transition-all inline-block text-sm">
-              📞 Call Now
+              Call Now
             </a>
           </div>
         </div>
@@ -157,7 +160,9 @@ export default function LabsPage() {
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#1a56db] to-purple-600 flex items-center justify-center text-white font-extrabold text-xl mx-auto mb-4 shadow-lg">
                 {s.step}
               </div>
-              <div className="text-3xl mb-3">{s.icon}</div>
+              <div className="w-16 h-16 rounded-full mx-auto mb-3 overflow-hidden border-2 border-gray-100 shadow-sm">
+                <img src={s.imgSrc} alt={s.title} className="w-full h-full object-cover" />
+              </div>
               <h3 className="font-extrabold text-[#1e3a5f] mb-2">{s.title}</h3>
               <p className="text-gray-500 text-sm">{s.desc}</p>
             </div>
@@ -179,7 +184,9 @@ export default function LabsPage() {
             {testCategories.map((cat) => (
               <div key={cat.title} className="bg-white rounded-2xl p-7 shadow-md border border-gray-100 card-hover">
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-4xl">{cat.icon}</span>
+                  <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-gray-100 shadow-sm">
+                    <img src={cat.imgSrc} alt={cat.title} className="w-full h-full object-cover" />
+                  </div>
                   <h3 className="font-extrabold text-[#1e3a5f] text-lg">{cat.title}</h3>
                 </div>
                 <ul className="space-y-2">
@@ -205,7 +212,7 @@ export default function LabsPage() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e3a5f] mt-2">Book a Lab Test</h2>
           <p className="text-gray-500 mt-3">Choose home collection or walk-in. We make it easy.</p>
         </div>
-        <ContactForm title="Lab Test Booking Form" />
+        <ContactForm />
       </section>
     </>
   );

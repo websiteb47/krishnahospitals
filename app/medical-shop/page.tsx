@@ -2,37 +2,37 @@ import ContactForm from "@/components/ContactForm";
 
 const shopFeatures = [
   {
-    icon: "🏷️",
+    imgSrc: "/service_pharmacy.png",
     title: "Flat 22% Discount",
     desc: "Guaranteed 22% off on all medicines — retail, wholesale, and hospital-attached purchases.",
     highlight: true,
   },
   {
-    icon: "🚚",
+    imgSrc: "/medicine delivery.png",
     title: "Free 24/7 Home Delivery",
     desc: "Order any time of day or night and get your medicines delivered to your door free of charge.",
     highlight: false,
   },
   {
-    icon: "🕐",
+    imgSrc: "/service_pharmacy.png",
     title: "Open 24/7",
     desc: "Our medical shop never closes. Get medicines at midnight, weekends, or during holidays.",
     highlight: false,
   },
   {
-    icon: "📦",
+    imgSrc: "/shop_medicines.png",
     title: "Wholesale Supply",
     desc: "Bulk purchase for clinics, nursing homes, hospitals, and pharmacies at wholesale rates + 22% off.",
     highlight: false,
   },
   {
-    icon: "💊",
+    imgSrc: "/shop_medicines.png",
     title: "All Brands Available",
     desc: "Branded and generic medicines, surgical items, medical equipment and health products.",
     highlight: false,
   },
   {
-    icon: "🔒",
+    imgSrc: "/service_pharmacy.png",
     title: "Genuine & Quality Assured",
     desc: "All medicines sourced directly from certified distributors. 100% genuine products guaranteed.",
     highlight: false,
@@ -40,25 +40,25 @@ const shopFeatures = [
 ];
 
 const categories = [
-  { icon: "💊", name: "Tablets & Capsules" },
-  { icon: "🍶", name: "Syrups & Liquids" },
-  { icon: "💉", name: "Injectables" },
-  { icon: "🩺", name: "Surgical & Disposables" },
-  { icon: "🩹", name: "Dressings & Bandages" },
-  { icon: "🌡️", name: "Medical Devices" },
-  { icon: "🧴", name: "Cosmetics & Skin Care" },
-  { icon: "🥛", name: "Nutritional Supplements" },
-  { icon: "👶", name: "Baby & Mother Care" },
-  { icon: "🫀", name: "Cardiac Medicines" },
-  { icon: "🦷", name: "Dental Products" },
-  { icon: "🌿", name: "Ayurvedic & Herbal" },
+  { imgSrc: "/shop_medicines.png", name: "Tablets & Capsules" },
+  { imgSrc: "/shop_medicines.png", name: "Syrups & Liquids" },
+  { imgSrc: "/shop_medicines.png", name: "Injectables" },
+  { imgSrc: "/shop_medicines.png", name: "Surgical & Disposables" },
+  { imgSrc: "/shop_medicines.png", name: "Dressings & Bandages" },
+  { imgSrc: "/shop_medicines.png", name: "Medical Devices" },
+  { imgSrc: "/shop_medicines.png", name: "Cosmetics & Skin Care" },
+  { imgSrc: "/shop_medicines.png", name: "Nutritional Supplements" },
+  { imgSrc: "/shop_medicines.png", name: "Baby & Mother Care" },
+  { imgSrc: "/shop_medicines.png", name: "Cardiac Medicines" },
+  { imgSrc: "/shop_medicines.png", name: "Dental Products" },
+  { imgSrc: "/shop_medicines.png", name: "Ayurvedic & Herbal" },
 ];
 
 const wholesaleSteps = [
-  { icon: "📋", step: "1", title: "Submit Your Requirement", desc: "Share your medicine list with quantities via our form or WhatsApp." },
-  { icon: "💰", step: "2", title: "Get Wholesale Quote", desc: "Receive a competitive quote with 22% discount applied automatically." },
-  { icon: "✅", step: "3", title: "Confirm & Pay", desc: "Confirm your order and complete payment securely." },
-  { icon: "🚚", step: "4", title: "Fast Delivery", desc: "Bulk order delivered quickly to your facility." },
+  { imgSrc: "/shop_medicines.png", step: "1", title: "Submit Your Requirement", desc: "Share your medicine list with quantities via our form or WhatsApp." },
+  { imgSrc: "/shop_medicines.png", step: "2", title: "Get Wholesale Quote", desc: "Receive a competitive quote with 22% discount applied automatically." },
+  { imgSrc: "/shop_medicines.png", step: "3", title: "Confirm & Pay", desc: "Confirm your order and complete payment securely." },
+  { imgSrc: "/medicine delivery.png", step: "4", title: "Fast Delivery", desc: "Bulk order delivered quickly to your facility." },
 ];
 
 export default function MedicalShopPage() {
@@ -87,7 +87,7 @@ export default function MedicalShopPage() {
                 Order Medicines Now
               </a>
               <a href="https://wa.me/917416888998" className="border-2 border-white/60 text-white font-semibold px-7 py-3 rounded-md hover:bg-white/10 transition-all text-sm">
-                💬 WhatsApp Order
+                WhatsApp Order
               </a>
             </div>
             <div className="inline-flex items-center gap-3 bg-white/10 border border-white/20 px-5 py-3 rounded-xl">
@@ -133,13 +133,14 @@ export default function MedicalShopPage() {
           {shopFeatures.map((f) => (
             <div
               key={f.title}
-              className={`rounded-2xl p-7 shadow-md border card-hover ${
-                f.highlight
-                  ? "bg-gradient-to-br from-green-600 to-green-700 text-white border-green-500"
-                  : "bg-white border-gray-100"
-              }`}
+              className={`rounded-2xl p-7 shadow-md border card-hover ${f.highlight
+                ? "bg-gradient-to-br from-green-600 to-green-700 text-white border-green-500"
+                : "bg-white border-gray-100"
+                }`}
             >
-              <div className="text-4xl mb-4">{f.icon}</div>
+              <div className="mb-5 w-16 h-16 rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
+                <img src={f.imgSrc} alt={f.title} className="w-full h-full object-cover" />
+              </div>
               <h3 className={`font-extrabold text-base mb-2 ${f.highlight ? "text-white" : "text-[#1e3a5f]"}`}>
                 {f.title}
               </h3>
@@ -167,7 +168,9 @@ export default function MedicalShopPage() {
                 <div className="w-14 h-14 rounded-full bg-[#1a56db] flex items-center justify-center text-white font-extrabold text-lg mx-auto mb-4">
                   {s.step}
                 </div>
-                <div className="text-3xl mb-3">{s.icon}</div>
+                <div className="mb-4 w-16 h-16 mx-auto rounded-full border-2 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
+                  <img src={s.imgSrc} alt={s.title} className="w-full h-full object-cover" />
+                </div>
                 <h3 className="font-bold text-white mb-2 text-sm">{s.title}</h3>
                 <p className="text-blue-300 text-xs leading-relaxed">{s.desc}</p>
               </div>
@@ -178,7 +181,7 @@ export default function MedicalShopPage() {
               href="#order"
               className="bg-green-500 hover:bg-green-400 text-white font-extrabold px-10 py-4 rounded-full transition-all hover:scale-105 inline-block text-sm shadow-xl"
             >
-              📦 Place Wholesale Order
+              Place Wholesale Order
             </a>
           </div>
         </div>
@@ -194,7 +197,9 @@ export default function MedicalShopPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {categories.map((c) => (
               <div key={c.name} className="bg-white rounded-2xl p-5 text-center shadow-sm border border-gray-100 card-hover">
-                <div className="text-4xl mb-3">{c.icon}</div>
+                <div className="mb-4 w-16 h-16 mx-auto rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
+                  <img src={c.imgSrc} alt={c.name} className="w-full h-full object-cover" />
+                </div>
                 <p className="font-bold text-[#1e3a5f] text-sm">{c.name}</p>
               </div>
             ))}
@@ -206,7 +211,9 @@ export default function MedicalShopPage() {
       <section id="delivery" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="bg-gradient-to-br from-[#1a56db] to-[#1e3a5f] rounded-3xl p-10 text-white shadow-2xl text-center">
-            <div className="text-7xl mb-5">🚚</div>
+            <div className="w-24 h-24 mx-auto mb-5 rounded-full overflow-hidden border-4 border-white/20">
+              <img src="/medicine delivery.png" alt="Delivery" className="w-full h-full object-cover" />
+            </div>
             <h3 className="text-2xl font-extrabold mb-3">Free 24/7 Home Delivery</h3>
             <p className="text-blue-200 mb-6 text-sm">Never run out of medicines again. We deliver to your door anytime.</p>
             <div className="grid grid-cols-2 gap-4 text-left">
@@ -234,22 +241,24 @@ export default function MedicalShopPage() {
             </p>
             <div className="space-y-4 mb-8">
               {[
-                { icon: "📞", t: "Call or WhatsApp your medicine list" },
-                { icon: "✅", t: "Confirm availability & 22% discounted price" },
-                { icon: "🚪", t: "Receive at your doorstep — free, fast, safe" },
+                { t: "Call or WhatsApp your medicine list" },
+                { t: "Confirm availability & 22% discounted price" },
+                { t: "Receive at your doorstep — free, fast, safe" },
               ].map((s) => (
                 <div key={s.t} className="flex gap-3 items-center bg-[#f0f5ff] rounded-xl p-4">
-                  <span className="text-2xl">{s.icon}</span>
+                  <div className="w-10 h-10 rounded-full border-2 overflow-hidden flex items-center justify-center border-white shadow-sm ring-1 ring-gray-50 shrink-0">
+                    <img src="/shop_medicines.png" alt="step" className="w-full h-full object-cover" />
+                  </div>
                   <p className="text-gray-700 text-sm font-semibold">{s.t}</p>
                 </div>
               ))}
             </div>
             <div className="flex gap-4">
               <a href="#order" className="bg-[#1a56db] text-white font-bold px-6 py-3 rounded-full hover:bg-[#1e3a5f] transition-colors text-sm">
-                🛒 Order Now
+                Order Now
               </a>
               <a href="https://wa.me/919999999999" className="bg-green-500 text-white font-bold px-6 py-3 rounded-full hover:bg-green-600 transition-colors text-sm">
-                💬 WhatsApp Order
+                WhatsApp Order
               </a>
             </div>
           </div>
@@ -264,7 +273,7 @@ export default function MedicalShopPage() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1e3a5f] mt-2">Order Medicines</h2>
             <p className="text-gray-500 mt-3">Fill in your details and we'll contact you to confirm your order with 22% discount applied.</p>
           </div>
-          <ContactForm title="Medicine Order Form" />
+          <ContactForm />
         </div>
       </section>
     </>

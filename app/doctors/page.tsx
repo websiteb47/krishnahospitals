@@ -5,80 +5,80 @@ const doctors = [
     name: "Dr. M. Adam Khan",
     qualifications: "M.B.B.S., F.C.I.P.",
     specialty: "Physician & Surgeon",
-    icon: "🩺",
+    imgSrc: "/doc_male.png",
     color: "from-blue-600 to-blue-800",
   },
   {
     name: "Dr. Nagarjuna Chadalavada",
     qualifications: "M.B.B.S., M.D. Paed., FIAP",
     specialty: "Child Specialist (Pediatrician)",
-    icon: "👶",
+    imgSrc: "/doc_male.png",
     color: "from-sky-500 to-sky-700",
   },
   {
     name: "Dr. K. Venkat Ram",
     qualifications: "MS., F.M.A.S.",
     specialty: "General & Laparoscopic Surgeon",
-    icon: "🔬",
+    imgSrc: "/doc_male.png",
     color: "from-teal-600 to-teal-800",
   },
   {
     name: "Dr. D. Meenakshi Pranavi",
     qualifications: "DGO, F.M.A.S.",
     specialty: "Laparoscopic & Infertility Specialist",
-    icon: "🤰",
+    imgSrc: "/doc_female.png",
     color: "from-pink-600 to-pink-800",
   },
   {
     name: "Dr. Gayam Srikanth Reddy",
     qualifications: "M.B.B.S., M.D., F.DIAB",
     specialty: "General Physician & Diabetologist",
-    icon: "💉",
+    imgSrc: "/doc_male.png",
     color: "from-purple-600 to-purple-800",
   },
   {
     name: "Dr. Prudhvi Pinnaka",
     qualifications: "M.B.B.S., M.S., F.I.O.T.",
     specialty: "Orthopedic Surgeon",
-    icon: "🦴",
+    imgSrc: "/doc_male.png",
     color: "from-orange-600 to-orange-700",
   },
   {
     name: "Dr. Asha Dharmala",
     qualifications: "B.D.S.",
     specialty: "Dental Surgeon",
-    icon: "🦷",
+    imgSrc: "/doc_female.png",
     color: "from-cyan-600 to-cyan-800",
   },
   {
     name: "Dr. Navali Krishna Prasad",
     qualifications: "M.B.B.S., M.D. Medicine, D.M. Cardiology",
     specialty: "Cardiologist",
-    icon: "❤️",
+    imgSrc: "/doc_male.png",
     color: "from-red-600 to-red-800",
   },
   {
     name: "Dr. T. Raja Shekhar",
     qualifications: "",
     specialty: "Physiotherapist",
-    icon: "🏃",
+    imgSrc: "/doc_male.png",
     color: "from-green-600 to-green-700",
   },
   {
     name: "Dr. Sandya Dilip Yas",
     qualifications: "",
     specialty: "Physiotherapist",
-    icon: "🏃",
+    imgSrc: "/doc_female.png",
     color: "from-emerald-600 to-emerald-800",
   },
 ];
 
 const onCallSpecialties = [
-  { icon: "🧠", name: "Neurology" },
-  { icon: "👂", name: "ENT (Ear, Nose & Throat)" },
-  { icon: "👃", name: "Nose" },
-  { icon: "🗣️", name: "Throat" },
-  { icon: "🫃", name: "Gastro Entrology" },
+  { imgSrc: "/neuro.JPG", name: "Neurology" },
+  { imgSrc: "/Doctorroom.jpeg", name: "ENT (Ear, Nose & Throat)" },
+  { imgSrc: "/Doctorroom.jpeg", name: "Nose" },
+  { imgSrc: "/Doctorroom.jpeg", name: "Throat" },
+  { imgSrc: "/surgical gastro.JPG", name: "Gastro Entrology" },
 ];
 
 export default function DoctorsPage() {
@@ -174,19 +174,21 @@ export default function DoctorsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-5">
             {onCallSpecialties.map((s) => (
-              <div key={s.name} className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-8 py-5 text-center min-w-[140px]">
-                <div className="text-4xl mb-2">{s.icon}</div>
+              <div key={s.name} className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-8 py-5 text-center min-w-[140px] flex flex-col items-center">
+                <div className="w-14 h-14 rounded-full overflow-hidden mb-2 border-2 border-white/40">
+                  <img src={s.imgSrc} alt={s.name} className="w-full h-full object-cover" />
+                </div>
                 <p className="text-white font-bold text-sm">{s.name}</p>
                 <p className="text-blue-300 text-xs mt-1">On Call</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="tel:7416888998" className="bg-yellow-400 text-[#1e3a5f] font-extrabold px-8 py-3 rounded-full hover:bg-yellow-300 transition-all text-sm">
-              📞 Call: 7416888998
+            <a href="tel:+917416888998" className="bg-white text-[#1565c0] font-bold px-6 py-3 rounded-full hover:shadow-xl transition-all inline-block text-sm">
+              Call: 7416888998
             </a>
             <a href="tel:6262787896" className="bg-white/20 text-white font-bold px-8 py-3 rounded-full hover:bg-white/30 transition-all text-sm">
-              📞 Call: 6262787896
+              Call: 6262787896
             </a>
           </div>
         </div>
@@ -202,8 +204,8 @@ export default function DoctorsPage() {
           <Link href="/hospital#appointment" className="bg-[#1a56db] hover:bg-[#1e3a5f] text-white font-bold px-8 py-3.5 rounded-full transition-all text-sm shadow-lg">
             📅 Book Appointment
           </Link>
-          <a href="https://wa.me/917416888998" className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-full transition-all text-sm shadow-lg">
-            💬 WhatsApp Us
+          <a href="https://wa.me/917416888998" className="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-3.5 rounded-full transition-all inline-flex items-center gap-2 text-sm">
+            WhatsApp Us
           </a>
         </div>
       </section>

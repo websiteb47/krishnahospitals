@@ -1,22 +1,13 @@
 import Link from "next/link";
-import ContactForm from "@/components/ContactForm";
 import HeroBanner from "@/components/HeroBanner";
 
 const hospitalServices = [
-  { icon: "", label: "24/7 Emergency Care" },
-  { icon: "", label: "₹200 OP Consultation Fee" },
-  { icon: "", label: "Video Call Consultations" },
-  { icon: "", label: "Home Visit Services" },
+  { imgSrc: "/service_emergency.png", label: "24/7 Emergency Care", colorClass: "bg-red-50 border-red-100 text-red-700", iconBg: "bg-red-100" },
+  { imgSrc: "/service_consultation.png", label: "₹200 OP Consultation Fee", colorClass: "bg-blue-50 border-blue-100 text-blue-700", iconBg: "bg-blue-100" },
+  { imgSrc: "/service_video_call.png", label: "Video Call Consultations", colorClass: "bg-purple-50 border-purple-100 text-purple-700", iconBg: "bg-purple-100" },
+  { imgSrc: "/service_home_visit.png", label: "Home Visit Services", colorClass: "bg-teal-50 border-teal-100 text-teal-700", iconBg: "bg-teal-100" },
 ];
 
-const features = [
-  { icon: "🚑", title: "24/7 Emergency", desc: "Round-the-clock emergency care with a dedicated trauma team." },
-  { icon: "📹", title: "Video Consultation", desc: "Consult specialist doctors from home via secure video call." },
-  { icon: "🏠", title: "Home Visits", desc: "Medical staff visit your home for bedside treatment and care." },
-  { icon: "🧪", title: "All Lab Tests", desc: "500+ diagnostics under one roof at discounted pricing." },
-  { icon: "🚚", title: "Free Medicine Delivery", desc: "Order medicines 24/7 and get free doorstep delivery." },
-  { icon: "💰", title: "Affordable Care", desc: "₹200 OP fee and flat 22% discount on all medicines." },
-];
 
 const testimonials = [
   { name: "Rajesh Kumar", role: "Patient", text: "Krishna Hospitals saved my father's life at 2 AM. The staff was incredibly caring and professional.", rating: 5 },
@@ -167,11 +158,14 @@ export default function HomePage() {
           <h2 className="text-center font-extrabold text-gray-800 text-2xl mb-8 section-title-bar">
             Our Hospital Services
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {hospitalServices.map((s) => (
-              <div key={s.label} className="bg-white rounded-xl p-5 text-center shadow-sm border border-gray-100 card-hover">
-                <div className="text-3xl mb-3">{s.icon}</div>
-                <p className="text-gray-700 text-xs font-semibold leading-snug">{s.label}</p>
+              <div key={s.label} className={`rounded-xl p-5 sm:p-6 text-center shadow-sm border ${s.colorClass} card-hover flex flex-col items-center justify-center transition-all hover:-translate-y-1 hover:shadow-lg`}>
+                <div className={`mb-4 w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-md group-hover:scale-110 transition-transform`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={s.imgSrc} alt={s.label} className="w-full h-full object-cover" />
+                </div>
+                <p className="font-extrabold text-sm sm:text-base leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
@@ -213,36 +207,25 @@ export default function HomePage() {
 
       {/* ── SPECIALTIES & FEATURES ───────────────────────────── */}
       <section className="bg-[#f4f8fd] py-16 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-extrabold text-[#1565c0] text-2xl mb-2 section-title-bar left">
-              Specialties &amp; Facilities
-            </h2>
-            <p className="text-gray-500 text-sm mb-6 mt-4">Providing Advanced Medical Care for All Your Needs.</p>
-            <ul className="space-y-3 mb-8">
-              {["Experienced Specialists", "State-of-the-Art Facilities", "Compassionate Care", "Affordable Pricing", "24/7 Availability"].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-gray-700 text-sm font-medium">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link href="/doctors"
-              className="inline-block bg-[#1565c0] hover:bg-[#0d2d5e] text-white font-bold px-7 py-3 rounded-md transition-colors text-sm">
-              View All Specialties
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {features.map((f) => (
-              <div key={f.title} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 card-hover">
-                <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-[#1565c0] text-sm mb-1">{f.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
-              </div>
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+          <h2 className="font-extrabold text-[#1565c0] text-3xl mb-2 section-title-bar">
+            Specialties &amp; Facilities
+          </h2>
+          <p className="text-gray-500 text-base mb-8 mt-4">Providing Advanced Medical Care for All Your Needs.</p>
+          <ul className="flex flex-wrap justify-center gap-4 mb-10">
+            {["Experienced Specialists", "State-of-the-Art Facilities", "Compassionate Care", "Affordable Pricing", "24/7 Availability"].map((item) => (
+              <li key={item} className="flex items-center gap-2 text-gray-700 text-sm font-semibold bg-white px-5 py-2.5 rounded-full shadow border border-gray-100 hover:shadow-md transition-shadow">
+                <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                </svg>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
+          <Link href="/doctors"
+            className="inline-block bg-[#1565c0] hover:bg-[#0d2d5e] text-white font-extrabold px-8 py-3 rounded-md transition-colors text-base shadow hover:shadow-lg">
+            View All Specialties
+          </Link>
         </div>
       </section>
 
@@ -274,30 +257,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CONTACT ──────────────────────────────────────────── */}
-      <section id="contact" className="bg-[#f4f8fd] py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-center font-extrabold text-gray-800 text-2xl mb-10 section-title-bar">Contact Us</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            <div className="space-y-4">
-              {[
-                { icon: "📍", title: "Address", val: "Amaravathi Rd, beside B.V.R. Convention, Panduranga Nagar, Guntur, AP – 522007" },
-                { icon: "📞", title: "Phone / Emergency", val: "7416888998 | 6262787896 | 8074699548" },
-                { icon: "🕐", title: "Working Hours", val: "24 × 7 × 365 – Always Open" },
-              ].map((c) => (
-                <div key={c.title} className="flex gap-4 bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                  <span className="text-2xl">{c.icon}</span>
-                  <div>
-                    <p className="font-bold text-gray-800 text-sm">{c.title}</p>
-                    <p className="text-gray-500 text-sm mt-0.5">{c.val}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

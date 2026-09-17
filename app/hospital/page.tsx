@@ -18,32 +18,32 @@ const specialties = [
 
 const services = [
   {
-    icon: "🚨",
+    imgSrc: "/service_ward.png",
     title: "24/7 Emergency Care",
     desc: "Fully equipped emergency ward with trained trauma staff available round the clock.",
   },
   {
-    icon: "🩺",
+    imgSrc: "/service_consultation.png",
     title: "Outpatient (OP) – ₹200",
     desc: "Consult any specialist with our lowest ₹200 OP fee, no hidden charges.",
   },
   {
-    icon: "🛏️",
+    imgSrc: "/service_inpatient.png",
     title: "Inpatient (IP) Services",
     desc: "Comfortable private and semi-private rooms with 24/7 nursing care.",
   },
   {
-    icon: "🔬",
+    imgSrc: "/service_lab.png",
     title: "Advanced Diagnostics",
     desc: "In-house lab, X-ray, ECG, ultrasound and more available on site.",
   },
   {
-    icon: "💊",
+    imgSrc: "/service_pharmacy.png",
     title: "Pharmacy On-Site",
     desc: "24/7 in-house pharmacy with 22% discount on all medicines.",
   },
   {
-    icon: "🚑",
+    imgSrc: "/service_emergency.png",
     title: "Ambulance Service",
     desc: "GPS-tracked ambulances available 24/7 for emergency transport.",
   },
@@ -114,7 +114,10 @@ export default function HospitalPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s) => (
             <div key={s.title} className="bg-white rounded-2xl p-7 shadow-md border border-gray-100 card-hover">
-              <div className="text-4xl mb-4">{s.icon}</div>
+              <div className="mb-6 w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.imgSrc} alt={s.title} className="w-full h-full object-cover" />
+              </div>
               <h3 className="font-extrabold text-[#0d2d5e] text-base mb-2">{s.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
             </div>
