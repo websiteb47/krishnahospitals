@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 
-const slides = [
+const slides: any[] = [
   {
     id: 1,
     type: "image",
