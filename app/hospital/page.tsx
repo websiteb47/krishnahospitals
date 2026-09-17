@@ -199,7 +199,7 @@ export default function HospitalPage() {
           <span className="text-[#1565c0] font-bold text-sm uppercase tracking-widest">Appointments</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d2d5e] mt-2">Book an Appointment</h2>
         </div>
-        <ContactForm title="Schedule Your Visit" />
+        <ContactForm />
       </section>
     </>
   );
