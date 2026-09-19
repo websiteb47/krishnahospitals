@@ -75,7 +75,7 @@ const steps = [
   { imgSrc: "/lab_tests.png", step: "1", title: "Call or Book Online", desc: "Call us or fill the booking form to schedule your sample collection." },
   { imgSrc: "/service_home_visit.png", step: "2", title: "We Come to You", desc: "Our trained phlebotomist arrives at your location at the scheduled time." },
   { imgSrc: "/lab_tests.png", step: "3", title: "Sample Collected", desc: "Blood/urine/other samples collected safely and hygienically." },
-  { imgSrc: "/lab_tests.png", step: "4", title: "Get Reports", desc: "Receive your digital reports via WhatsApp/email, same day for most tests." },
+  { imgSrc: "/medical_reports.png", step: "4", title: "Get Reports", desc: "Receive your digital reports via WhatsApp/email, same day for most tests." },
 ];
 
 export default function LabsPage() {
@@ -110,13 +110,20 @@ export default function LabsPage() {
               { imgSrc: "/service_lab.png", val: "Same Day", label: "Reports" },
               { imgSrc: "/lab_tests.png", val: "Discounted", label: "Pricing" },
             ].map((s) => (
-              <div key={s.label} className="bg-white/15 backdrop-blur border border-white/20 rounded-2xl p-6 text-center flex flex-col items-center">
-                <div className="w-12 h-12 mb-3 rounded-full overflow-hidden border-2 border-white/40">
-                  <img src={s.imgSrc} alt={s.label} className="w-full h-full object-cover" />
+              <div key={s.label} className="relative rounded-2xl overflow-hidden shadow-lg border border-white/20 min-h-[140px] sm:min-h-[160px] flex flex-col justify-end p-5 text-center group">
+                <img src={s.imgSrc} alt={s.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/90 via-[#1e3a5f]/40 to-transparent" />
+                <div className="relative z-10 pt-10">
+                  <p className="text-2xl sm:text-3xl font-extrabold text-[#00e5ff] drop-shadow-md leading-tight">{s.val}</p>
+                  <p className="text-white text-sm sm:text-base font-bold tracking-wide drop-shadow-md">{s.label}</p>
                 </div>
-                <p className="text-xl font-extrabold text-yellow-300">{s.val}</p>
-                <p className="text-blue-100 text-sm font-semibold mt-1">{s.label}</p>
               </div>
+
+
+
+
+
+
             ))}
           </div>
         </div>

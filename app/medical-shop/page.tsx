@@ -40,18 +40,18 @@ const shopFeatures = [
 ];
 
 const categories = [
-  { imgSrc: "/shop_medicines.png", name: "Tablets & Capsules" },
-  { imgSrc: "/shop_medicines.png", name: "Syrups & Liquids" },
-  { imgSrc: "/shop_medicines.png", name: "Injectables" },
-  { imgSrc: "/shop_medicines.png", name: "Surgical & Disposables" },
-  { imgSrc: "/shop_medicines.png", name: "Dressings & Bandages" },
-  { imgSrc: "/shop_medicines.png", name: "Medical Devices" },
-  { imgSrc: "/shop_medicines.png", name: "Cosmetics & Skin Care" },
-  { imgSrc: "/shop_medicines.png", name: "Nutritional Supplements" },
-  { imgSrc: "/shop_medicines.png", name: "Baby & Mother Care" },
-  { imgSrc: "/shop_medicines.png", name: "Cardiac Medicines" },
-  { imgSrc: "/shop_medicines.png", name: "Dental Products" },
-  { imgSrc: "/shop_medicines.png", name: "Ayurvedic & Herbal" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M19.333 4.667a4.714 4.714 0 0 0-6.666 0L4.667 12.667a4.714 4.714 0 0 0 6.666 6.666l8-8a4.714 4.714 0 0 0 0-6.666z M16 8l-4 4" />, name: "Tablets & Capsules" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M9 3h6m-3 0v6m-3 12h6a3 3 0 0 0 3-3V12l-2-3H8l-2 3v6a3 3 0 0 0 3 3z" />, name: "Syrups & Liquids" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-6 6 M14 9l-4 4 M10.5 5.5l-3-3 M3 21l3-3 M17 3l4 4 M14 9l4-4 M8.5 14.5l-3 3" />, name: "Injectables" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12 M6 18L18 6 M3 3a3 3 0 1 0 6 6 M15 15a3 3 0 1 0 6 6" />, name: "Surgical & Disposables" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M14 6l4 4 M6 14l4 4 M12 8l4 4 M8 12l4 4 M4 16a2.828 2.828 0 1 0 4 4l12-12a2.828 2.828 0 1 0-4-4z" />, name: "Dressings & Bandages" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 22a2.5 2.5 0 0 0 2.5-2.5v-11a2.5 2.5 0 0 0-2.5-2.5h-15A2.5 2.5 0 0 0 2 8.5v11A2.5 2.5 0 0 0 4.5 22h15z M12 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2 M12 15h4 M12 12v6" />, name: "Medical Devices" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 4c-4.418 0-8 3-8 7s3.582 7 8 7 8-3 8-7-3.582-7-8-7z M12 4v4 M9 7v2 M15 7v2" />, name: "Cosmetics & Skin Care" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.5a9.5 9.5 0 1 1 0-19 9.5 9.5 0 0 1 0 19z M12 7v10 M7 12h10" />, name: "Nutritional Supplements" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 0 1-9-9c0-4.97 4.03-9 9-9 4.97 0 9 4.03 9 9a9 9 0 0 1-9 9z M12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6z M8 14h8" />, name: "Baby & Mother Care" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />, name: "Cardiac Medicines" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a4 4 0 0 0 4-4v-4c0-2-1-4-4-4s-4 2-4 4v4a4 4 0 0 0 4 4z M8 9c0-3 2-6 4-6s4 3 4 6" />, name: "Dental Products" },
+  { icon: <path strokeLinecap="round" strokeLinejoin="round" d="M12 22V12 M12 12c-4 0-7-3-7-7 0 4 3 7 7 7z M12 12c4 0 7-3 7-7 0 4-3 7-7 7z" />, name: "Ayurvedic & Herbal" },
 ];
 
 const wholesaleSteps = [
@@ -133,20 +133,23 @@ export default function MedicalShopPage() {
           {shopFeatures.map((f) => (
             <div
               key={f.title}
-              className={`rounded-2xl p-7 shadow-md border card-hover ${f.highlight
-                ? "bg-gradient-to-br from-green-600 to-green-700 text-white border-green-500"
+              className={`rounded-2xl overflow-hidden shadow-md border card-hover flex flex-col ${f.highlight
+                ? "bg-gradient-to-br from-green-600 to-green-700 border-green-500"
                 : "bg-white border-gray-100"
                 }`}
             >
-              <div className="mb-5 w-16 h-16 rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
+              <div className="relative h-48 w-full shrink-0">
                 <img src={f.imgSrc} alt={f.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-4 left-5 right-5 text-white">
+                  <h3 className="font-extrabold text-xl sm:text-2xl tracking-wide">{f.title}</h3>
+                </div>
               </div>
-              <h3 className={`font-extrabold text-base mb-2 ${f.highlight ? "text-white" : "text-[#1e3a5f]"}`}>
-                {f.title}
-              </h3>
-              <p className={`text-sm leading-relaxed ${f.highlight ? "text-green-100" : "text-gray-500"}`}>
-                {f.desc}
-              </p>
+              <div className="p-6 flex flex-col grow">
+                <p className={`text-sm sm:text-base leading-relaxed ${f.highlight ? "text-green-50" : "text-gray-600"}`}>
+                  {f.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -196,9 +199,11 @@ export default function MedicalShopPage() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {categories.map((c) => (
-              <div key={c.name} className="bg-white rounded-2xl p-5 text-center shadow-sm border border-gray-100 card-hover">
-                <div className="mb-4 w-16 h-16 mx-auto rounded-full border-4 overflow-hidden flex items-center justify-center border-white shadow-sm ring-2 ring-gray-50 bg-gray-50">
-                  <img src={c.imgSrc} alt={c.name} className="w-full h-full object-cover" />
+              <div key={c.name} className="bg-white hover:bg-[#f4f8fd] transition-colors rounded-2xl p-5 text-center shadow-sm border border-gray-100 card-hover">
+                <div className="mb-4 w-16 h-16 mx-auto rounded-full flex items-center justify-center bg-[#eef5fe] text-[#1565c0]">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                     {c.icon}
+                  </svg>
                 </div>
                 <p className="font-bold text-[#1e3a5f] text-sm">{c.name}</p>
               </div>
@@ -210,25 +215,26 @@ export default function MedicalShopPage() {
       {/* Home Delivery */}
       <section id="delivery" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <div className="bg-gradient-to-br from-[#1a56db] to-[#1e3a5f] rounded-3xl p-10 text-white shadow-2xl text-center">
-            <div className="w-24 h-24 mx-auto mb-5 rounded-full overflow-hidden border-4 border-white/20">
-              <img src="/medicine delivery.png" alt="Delivery" className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-2xl font-extrabold mb-3">Free 24/7 Home Delivery</h3>
-            <p className="text-blue-200 mb-6 text-sm">Never run out of medicines again. We deliver to your door anytime.</p>
-            <div className="grid grid-cols-2 gap-4 text-left">
-              {[
-                "Free delivery always",
-                "Available 24/7",
-                "Fast & reliable",
-                "Contactless delivery",
-                "All medicines in stock",
-                "No minimum order",
-              ].map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-blue-100">
-                  <span className="text-green-400 font-bold">✓</span> {f}
-                </div>
-              ))}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl text-center flex flex-col justify-end">
+            <img src="/medicine delivery.png" alt="Delivery" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f] via-[#1a56db]/80 to-transparent" />
+            <div className="relative z-10 p-10 text-white mt-32">
+              <h3 className="text-2xl sm:text-3xl font-extrabold mb-3 drop-shadow-md">Free 24/7 Home Delivery</h3>
+              <p className="text-blue-100 mb-6 text-sm sm:text-base px-2">Never run out of medicines again. We deliver to your door anytime.</p>
+              <div className="grid grid-cols-2 gap-y-4 gap-x-2 text-left">
+                {[
+                  "Free delivery always",
+                  "Available 24/7",
+                  "Fast & reliable",
+                  "Contactless delivery",
+                  "All medicines in stock",
+                  "No minimum order",
+                ].map((f) => (
+                  <div key={f} className="flex items-center gap-2 text-sm text-white font-medium drop-shadow-sm">
+                    <span className="text-green-400 font-bold">✓</span> {f}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div>
@@ -246,9 +252,6 @@ export default function MedicalShopPage() {
                 { t: "Receive at your doorstep — free, fast, safe" },
               ].map((s) => (
                 <div key={s.t} className="flex gap-3 items-center bg-[#f0f5ff] rounded-xl p-4">
-                  <div className="w-10 h-10 rounded-full border-2 overflow-hidden flex items-center justify-center border-white shadow-sm ring-1 ring-gray-50 shrink-0">
-                    <img src="/shop_medicines.png" alt="step" className="w-full h-full object-cover" />
-                  </div>
                   <p className="text-gray-700 text-sm font-semibold">{s.t}</p>
                 </div>
               ))}

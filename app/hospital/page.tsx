@@ -84,16 +84,16 @@ export default function HospitalPage() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             {[
-              { val: "24/7", label: "Emergency" },
-              { val: "₹200", label: "OP Fee" },
-              { val: "10+", label: "Specialists" },
-              { val: "100+", label: "Beds" },
+              { val: "24/7", label: "Emergency", textColor: "text-red-500" },
+              { val: "₹200", label: "OP Fee", textColor: "text-[#1565c0]" },
+              { val: "10+", label: "Specialists", textColor: "text-[#1565c0]" },
+              { val: "100+", label: "Beds", textColor: "text-[#1565c0]" },
             ].map((s) => (
-              <div key={s.label} className="bg-white/10 border border-white/20 rounded-xl p-5 text-center">
-                <p className="text-3xl font-extrabold text-[#00e5ff]">{s.val}</p>
-                <p className="text-blue-100 text-xs font-semibold mt-1">{s.label}</p>
+              <div key={s.label} className="bg-white rounded-2xl p-6 flex flex-col justify-center items-center text-center shadow-2xl shadow-blue-900/30 border-b-4 border-transparent hover:border-[#1565c0] hover:-translate-y-1 transition-all duration-300">
+                <p className={`text-3xl sm:text-4xl font-black ${s.textColor}`}>{s.val}</p>
+                <p className="text-gray-500 text-xs sm:text-sm font-extrabold uppercase tracking-widest mt-2">{s.label}</p>
               </div>
             ))}
           </div>

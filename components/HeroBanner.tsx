@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 
 const slides: any[] = [
@@ -162,7 +162,30 @@ const IllustrationMap: Record<string, React.FC> = {
 export default function HeroBanner() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [showControls, setShowControls] = useState(true);
+  const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const total = slides.length;
+
+  const handleInteraction = useCallback(() => {
+    setShowControls(true);
+    if (controlsTimeoutRef.current) clearTimeout(controlsTimeoutRef.current);
+    controlsTimeoutRef.current = setTimeout(() => {
+      setShowControls(false);
+    }, 2500);
+  }, []);
+
+  useEffect(() => {
+    handleInteraction();
+    window.addEventListener('scroll', handleInteraction, { passive: true });
+    window.addEventListener('mousemove', handleInteraction, { passive: true });
+    window.addEventListener('touchstart', handleInteraction, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleInteraction);
+      window.removeEventListener('mousemove', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      if (controlsTimeoutRef.current) clearTimeout(controlsTimeoutRef.current);
+    };
+  }, [handleInteraction]);
 
   const next = useCallback(() => setCurrent((c) => (c + 1) % total), [total]);
   const prev = useCallback(() => setCurrent((c) => (c - 1 + total) % total), [total]);
@@ -234,7 +257,7 @@ export default function HeroBanner() {
       {/* Prev button */}
       <button
         onClick={prev}
-        className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 p-2 hover:opacity-75 transition-opacity"
+        className={`absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 p-2 transition-opacity duration-500 ${showControls ? 'opacity-80 hover:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Previous slide"
       >
         <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,7 +268,7 @@ export default function HeroBanner() {
       {/* Next button */}
       <button
         onClick={next}
-        className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 p-2 hover:opacity-75 transition-opacity"
+        className={`absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 p-2 transition-opacity duration-500 ${showControls ? 'opacity-80 hover:opacity-100' : 'opacity-0 pointer-events-none'}`}
         aria-label="Next slide"
       >
         <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">

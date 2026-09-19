@@ -43,7 +43,7 @@ const navLinks = [
   },
   { label: "Our Doctors", href: "/doctors" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
