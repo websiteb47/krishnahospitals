@@ -52,19 +52,19 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
           <Image
             src="/logo.jpeg"
             alt="Krishna Hospitals & Labs"
-            width={44}
-            height={44}
+            width={74}
+            height={74}
             className="rounded-full"
           />
           <div className="leading-tight">
-            <p className="font-extrabold text-[#1565c0] text-base leading-none">KRISHNA</p>
-            <p className="text-[10px] text-gray-500 font-semibold tracking-wide uppercase">Hospitals &amp; Labs</p>
+            <p className="font-extrabold text-[#1565c0] text-2xl leading-none">KRISHNA</p>
+            <p className="text-[13px] text-gray-500 font-semibold tracking-wide uppercase">Hospitals &amp; Labs</p>
           </div>
         </Link>
 

@@ -25,43 +25,43 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-6">
 
         {/* Medical Shop card — pharmacy shelf background */}
-        <div className="relative rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover" style={{minHeight: "220px"}}>
+        <div className="relative rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover" style={{ minHeight: "220px" }}>
           {/* Background illustration: medicine shelves */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#e3f0fb] via-[#cfe5f8] to-[#b8d9f5]">
             {/* Shelf SVG illustration */}
             <svg className="absolute right-0 bottom-0 w-56 h-full opacity-30" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Shelf lines */}
-              <rect x="10" y="60" width="180" height="6" rx="3" fill="#1565c0"/>
-              <rect x="10" y="120" width="180" height="6" rx="3" fill="#1565c0"/>
-              <rect x="10" y="180" width="180" height="6" rx="3" fill="#1565c0"/>
+              <rect x="10" y="60" width="180" height="6" rx="3" fill="#1565c0" />
+              <rect x="10" y="120" width="180" height="6" rx="3" fill="#1565c0" />
+              <rect x="10" y="180" width="180" height="6" rx="3" fill="#1565c0" />
               {/* Medicine boxes row 1 */}
-              <rect x="18" y="30" width="22" height="28" rx="3" fill="#1976d2"/>
-              <rect x="44" y="35" width="18" height="23" rx="3" fill="#42a5f5"/>
-              <rect x="66" y="28" width="20" height="30" rx="3" fill="#0d47a1"/>
-              <rect x="90" y="33" width="16" height="25" rx="3" fill="#1565c0"/>
-              <rect x="110" y="30" width="22" height="28" rx="3" fill="#1e88e5"/>
-              <rect x="136" y="36" width="18" height="22" rx="3" fill="#5c9bd1"/>
-              <rect x="158" y="29" width="20" height="29" rx="3" fill="#0d47a1"/>
+              <rect x="18" y="30" width="22" height="28" rx="3" fill="#1976d2" />
+              <rect x="44" y="35" width="18" height="23" rx="3" fill="#42a5f5" />
+              <rect x="66" y="28" width="20" height="30" rx="3" fill="#0d47a1" />
+              <rect x="90" y="33" width="16" height="25" rx="3" fill="#1565c0" />
+              <rect x="110" y="30" width="22" height="28" rx="3" fill="#1e88e5" />
+              <rect x="136" y="36" width="18" height="22" rx="3" fill="#5c9bd1" />
+              <rect x="158" y="29" width="20" height="29" rx="3" fill="#0d47a1" />
               {/* Medicine boxes row 2 */}
-              <rect x="18" y="88" width="24" height="30" rx="3" fill="#42a5f5"/>
-              <rect x="46" y="92" width="16" height="26" rx="3" fill="#1976d2"/>
-              <rect x="66" y="86" width="20" height="32" rx="3" fill="#1565c0"/>
-              <rect x="90" y="90" width="22" height="28" rx="3" fill="#0d47a1"/>
-              <rect x="116" y="88" width="18" height="30" rx="3" fill="#1e88e5"/>
-              <rect x="138" y="93" width="20" height="25" rx="3" fill="#42a5f5"/>
-              <rect x="162" y="87" width="16" height="31" rx="3" fill="#1565c0"/>
+              <rect x="18" y="88" width="24" height="30" rx="3" fill="#42a5f5" />
+              <rect x="46" y="92" width="16" height="26" rx="3" fill="#1976d2" />
+              <rect x="66" y="86" width="20" height="32" rx="3" fill="#1565c0" />
+              <rect x="90" y="90" width="22" height="28" rx="3" fill="#0d47a1" />
+              <rect x="116" y="88" width="18" height="30" rx="3" fill="#1e88e5" />
+              <rect x="138" y="93" width="20" height="25" rx="3" fill="#42a5f5" />
+              <rect x="162" y="87" width="16" height="31" rx="3" fill="#1565c0" />
               {/* Medicine boxes row 3 */}
-              <rect x="18" y="148" width="20" height="28" rx="3" fill="#1e88e5"/>
-              <rect x="42" y="152" width="24" height="24" rx="3" fill="#0d47a1"/>
-              <rect x="70" y="147" width="18" height="29" rx="3" fill="#42a5f5"/>
-              <rect x="92" y="150" width="22" height="26" rx="3" fill="#1565c0"/>
-              <rect x="118" y="148" width="20" height="28" rx="3" fill="#1976d2"/>
-              <rect x="142" y="153" width="16" height="23" rx="3" fill="#1e88e5"/>
-              <rect x="162" y="147" width="20" height="29" rx="3" fill="#5c9bd1"/>
+              <rect x="18" y="148" width="20" height="28" rx="3" fill="#1e88e5" />
+              <rect x="42" y="152" width="24" height="24" rx="3" fill="#0d47a1" />
+              <rect x="70" y="147" width="18" height="29" rx="3" fill="#42a5f5" />
+              <rect x="92" y="150" width="22" height="26" rx="3" fill="#1565c0" />
+              <rect x="118" y="148" width="20" height="28" rx="3" fill="#1976d2" />
+              <rect x="142" y="153" width="16" height="23" rx="3" fill="#1e88e5" />
+              <rect x="162" y="147" width="20" height="29" rx="3" fill="#5c9bd1" />
               {/* Pills */}
-              <ellipse cx="40" cy="210" rx="8" ry="5" fill="#1565c0" opacity="0.6"/>
-              <ellipse cx="80" cy="208" rx="6" ry="4" fill="#42a5f5" opacity="0.6"/>
-              <ellipse cx="120" cy="210" rx="7" ry="4" fill="#0d47a1" opacity="0.5"/>
+              <ellipse cx="40" cy="210" rx="8" ry="5" fill="#1565c0" opacity="0.6" />
+              <ellipse cx="80" cy="208" rx="6" ry="4" fill="#42a5f5" opacity="0.6" />
+              <ellipse cx="120" cy="210" rx="7" ry="4" fill="#0d47a1" opacity="0.5" />
             </svg>
             {/* White left fade */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
@@ -81,7 +81,7 @@ export default function HomePage() {
               <div className="flex items-center gap-2 text-sm text-gray-700">
                 <div className="w-9 h-9 rounded-full bg-white/80 border border-blue-100 flex items-center justify-center shadow-sm">
                   <svg className="w-4 h-4 text-[#1565c0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                 </div>
                 Hospital Attached Discounts
@@ -95,41 +95,41 @@ export default function HomePage() {
         </div>
 
         {/* Labs card — microscope + test tubes background */}
-        <div className="relative rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover" style={{minHeight: "220px"}}>
+        <div className="relative rounded-2xl shadow-md border border-gray-100 overflow-hidden card-hover" style={{ minHeight: "220px" }}>
           {/* Background illustration: lab equipment */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#e8f5fb] via-[#d4eef8] to-[#b8e0f5]">
             {/* Lab SVG illustration */}
             <svg className="absolute right-0 bottom-0 w-64 h-full opacity-35" viewBox="0 0 240 220" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Microscope body */}
-              <rect x="80" y="140" width="60" height="10" rx="4" fill="#1565c0"/>
-              <rect x="100" y="80" width="20" height="62" rx="3" fill="#1976d2"/>
-              <rect x="95" y="72" width="30" height="14" rx="4" fill="#0d47a1"/>
-              <ellipse cx="110" cy="70" rx="18" ry="10" fill="#1565c0"/>
-              <rect x="106" y="40" width="8" height="32" rx="3" fill="#42a5f5"/>
-              <circle cx="110" cy="38" r="8" fill="#0d47a1"/>
-              <circle cx="110" cy="38" r="4" fill="#90caf9"/>
+              <rect x="80" y="140" width="60" height="10" rx="4" fill="#1565c0" />
+              <rect x="100" y="80" width="20" height="62" rx="3" fill="#1976d2" />
+              <rect x="95" y="72" width="30" height="14" rx="4" fill="#0d47a1" />
+              <ellipse cx="110" cy="70" rx="18" ry="10" fill="#1565c0" />
+              <rect x="106" y="40" width="8" height="32" rx="3" fill="#42a5f5" />
+              <circle cx="110" cy="38" r="8" fill="#0d47a1" />
+              <circle cx="110" cy="38" r="4" fill="#90caf9" />
               {/* Arm */}
-              <rect x="108" y="75" width="40" height="6" rx="3" fill="#1565c0" transform="rotate(-30 108 75)"/>
+              <rect x="108" y="75" width="40" height="6" rx="3" fill="#1565c0" transform="rotate(-30 108 75)" />
               {/* Stage */}
-              <rect x="88" y="128" width="44" height="6" rx="3" fill="#1565c0"/>
-              <rect x="103" y="107" width="14" height="22" rx="2" fill="#90caf9" opacity="0.5"/>
+              <rect x="88" y="128" width="44" height="6" rx="3" fill="#1565c0" />
+              <rect x="103" y="107" width="14" height="22" rx="2" fill="#90caf9" opacity="0.5" />
               {/* Test tubes - colorful */}
-              <rect x="155" y="90" width="14" height="55" rx="7" fill="#ef5350"/>
-              <rect x="155" y="110" width="14" height="35" rx="7" fill="#ef5350" opacity="0.8"/>
-              <rect x="173" y="85" width="14" height="60" rx="7" fill="#26c6da"/>
-              <rect x="173" y="118" width="14" height="27" rx="7" fill="#26c6da" opacity="0.85"/>
-              <rect x="191" y="93" width="14" height="52" rx="7" fill="#66bb6a"/>
-              <rect x="191" y="120" width="14" height="25" rx="7" fill="#66bb6a" opacity="0.8"/>
-              <rect x="209" y="88" width="14" height="57" rx="7" fill="#ffa726"/>
-              <rect x="209" y="115" width="14" height="30" rx="7" fill="#ffa726" opacity="0.8"/>
+              <rect x="155" y="90" width="14" height="55" rx="7" fill="#ef5350" />
+              <rect x="155" y="110" width="14" height="35" rx="7" fill="#ef5350" opacity="0.8" />
+              <rect x="173" y="85" width="14" height="60" rx="7" fill="#26c6da" />
+              <rect x="173" y="118" width="14" height="27" rx="7" fill="#26c6da" opacity="0.85" />
+              <rect x="191" y="93" width="14" height="52" rx="7" fill="#66bb6a" />
+              <rect x="191" y="120" width="14" height="25" rx="7" fill="#66bb6a" opacity="0.8" />
+              <rect x="209" y="88" width="14" height="57" rx="7" fill="#ffa726" />
+              <rect x="209" y="115" width="14" height="30" rx="7" fill="#ffa726" opacity="0.8" />
               {/* Tube rack */}
-              <rect x="150" y="143" width="80" height="8" rx="3" fill="#1565c0"/>
+              <rect x="150" y="143" width="80" height="8" rx="3" fill="#1565c0" />
               {/* Lab bench */}
-              <rect x="60" y="150" width="170" height="10" rx="3" fill="#90caf9" opacity="0.4"/>
+              <rect x="60" y="150" width="170" height="10" rx="3" fill="#90caf9" opacity="0.4" />
               {/* Beakers */}
-              <path d="M70 110 L65 145 L90 145 L85 110 Z" fill="#42a5f5" opacity="0.5"/>
-              <rect x="66" y="107" width="22" height="5" rx="2" fill="#1565c0" opacity="0.6"/>
-              <path d="M72 125 L68 143 L88 143 L84 125 Z" fill="#26c6da" opacity="0.6"/>
+              <path d="M70 110 L65 145 L90 145 L85 110 Z" fill="#42a5f5" opacity="0.5" />
+              <rect x="66" y="107" width="22" height="5" rx="2" fill="#1565c0" opacity="0.6" />
+              <path d="M72 125 L68 143 L88 143 L84 125 Z" fill="#26c6da" opacity="0.6" />
             </svg>
             {/* White left fade */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent" />
@@ -140,7 +140,7 @@ export default function HomePage() {
             <p className="font-bold text-gray-800 text-base mb-2">All Lab Tests With Discounts</p>
             <div className="flex items-center gap-2 text-sm text-gray-700 mb-5">
               <svg className="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
               </svg>
               Free Home Sample Collection
             </div>
@@ -216,7 +216,7 @@ export default function HomePage() {
             {["Experienced Specialists", "State-of-the-Art Facilities", "Compassionate Care", "Affordable Pricing", "24/7 Availability"].map((item) => (
               <li key={item} className="flex items-center gap-2 text-gray-700 text-sm font-semibold bg-white px-5 py-2.5 rounded-full shadow border border-gray-100 hover:shadow-md transition-shadow">
                 <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
                 {item}
               </li>
