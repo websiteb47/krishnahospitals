@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MobileStickyBar from "@/components/MobileStickyBar";
 
 export const metadata: Metadata = {
   title: "Krishna Hospitals & Labs – Trusted Healthcare 24/7",
@@ -19,11 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-white text-gray-800">
+      <body className="min-h-full flex flex-col bg-white text-gray-800 pb-[52px] sm:pb-0">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <MobileStickyBar />
       </body>
     </html>
   );
