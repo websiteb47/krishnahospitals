@@ -102,12 +102,13 @@ export default function ContactPage() {
       <section className="w-full h-[500px] bg-gray-200">
         <iframe 
           title="Krishna Hospitals Map"
-          src="https://maps.google.com/maps?q=Krishna%20Hospitals%20Amaravathi%20Rd%20Guntur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15315.782449908113!2d80.41866538715819!3d16.32572300000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358b370806dcf7%3A0x99e4798d8e3e1425!2sKRISHNA%20HOSPITALS%20%26%20LABS!5e0!3m2!1sen!2sus!4v1789808641059!5m2!1sen!2sus"
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
           allowFullScreen={true} 
           loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
           className="grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-700" 
         />
       </section>
