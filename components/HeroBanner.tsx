@@ -39,7 +39,7 @@ function MedicalsIllustration() {
   return (
     <svg viewBox="0 0 300 220" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Shelf 1 */}
-      <rect x="20" y="58" width="260" height="7" rx="3" fill="white" opacity="0.3" />
+      <rect x="20" y="58" width="260" height="9" rx="3" fill="white" opacity="0.3" />
       {/* Shelf 2 */}
       <rect x="20" y="118" width="260" height="7" rx="3" fill="white" opacity="0.3" />
       {/* Shelf 3 */}
@@ -176,7 +176,7 @@ export default function HeroBanner() {
 
   return (
     <div
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden bg-gray-50/30"
       style={{ height: "clamp(360px, 60vw, 590px)" }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -190,12 +190,10 @@ export default function HeroBanner() {
           aria-hidden={idx !== current}
         >
           {slide.type === "image" ? (
-            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={slide.src!}
               alt={slide.alt!}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: "center 47%" }}
+              className="absolute inset-0 w-full h-full object-fill"
             />
           ) : (
             /* Custom illustrated slide */
